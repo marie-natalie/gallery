@@ -1,0 +1,16 @@
+pipeline{
+    agent any
+    tool{
+        nodejs 'nodejs'
+    }
+     stages{
+     stage('clone'){
+        steps{ git 'https://github.com/marie-natalie/gallery.git'}
+     }
+     stage('installing dependencies'){
+        steps{ sh 'npm install'}
+     }
+     
+     }
+     
+}
