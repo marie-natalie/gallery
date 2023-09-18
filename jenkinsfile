@@ -14,16 +14,5 @@ pipeline{
         steps{ sh 'npm test'}
      }
      }
-        post {
-        success {
-            script {
-                // Send a Slack notification on success
-                slackSend(
-                    color: 'good', // green color for success
-                    message: "Deployment was successful!",
-                    channel: '#your-channel' // specify the Slack channel
-                )
-            }
-        }
-    }
+        
 }
