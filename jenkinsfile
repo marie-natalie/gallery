@@ -18,7 +18,7 @@ pipeline{
         success {
             script {
                 slackSend(
-                    color: 'good', 
+                    color: 'danger', 
                     message: "Deployment was successful!\nBuild ID: ${BUILD_ID}\nRender Link: ${RENDER_LINK}",
                     channel: '#marie_IP1' 
                 )
