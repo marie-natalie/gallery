@@ -20,7 +20,7 @@ pipeline{
                 slackSend(
                     color: 'danger', 
                     message: "Deployment was successful!\nBuild ID: ${BUILD_ID}\nRender Link: ${RENDER_LINK}",
-                    channel: '#marie_IP1' 
+                    channel: '#marie_ip1' 
                 )
             }
         }
