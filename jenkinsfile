@@ -12,17 +12,13 @@ pipeline{
      }
      stage(test){
         steps{ sh 'npm test'}
+         script {
+        def renderLink = env.RENDER_LINK
      }
      }
         post {
-        success {
-            script {
-                slackSend(
-                    color: 'danger', 
-                    message: "Deployment was successful!\nBuild ID: ${BUILD_ID}\nRender Link: ${RENDER_LINK}",
-                    channel: '#marie_ip1' 
-                )
-            }
+        always {
+            slackSend channel: '#marie_ip1', tokenCredentialId: '9f5355a7-89ed-466d-b965-28f74eb0597a'
         }
     }
 }
